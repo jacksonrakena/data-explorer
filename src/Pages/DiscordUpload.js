@@ -1,20 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import styled from 'styled-components';
-import {
-	Grid,
-	List,
-	Card,
-	Header,
-	Divider,
-	Icon,
-	Segment,
-	Dimmer,
-	Loader,
-	Message,
-} from 'semantic-ui-react';
 import { useDropzone } from 'react-dropzone';
 import FadeIn from 'react-fade-in';
+import {
+	Card,
+	Dimmer,
+	Divider,
+	Grid,
+	Header,
+	Icon,
+	List,
+	Loader,
+	Message,
+	Segment,
+} from 'semantic-ui-react';
+import styled from 'styled-components';
 
 import { DiscordData } from '../Processors/Discord';
 

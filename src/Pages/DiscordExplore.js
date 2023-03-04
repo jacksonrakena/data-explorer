@@ -1,18 +1,18 @@
+import pms from 'pretty-ms';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import FadeIn from 'react-fade-in';
 import { useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
-import pms from 'pretty-ms';
 import {
-	Grid,
 	Card,
-	Header,
 	Divider,
+	Grid,
+	Header,
 	List,
 	Modal,
 	Table,
 } from 'semantic-ui-react';
-import FadeIn from 'react-fade-in';
+import styled from 'styled-components';
 
 import { DiscordData } from '../Processors/Discord';
 

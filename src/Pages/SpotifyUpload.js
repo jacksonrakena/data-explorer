@@ -1,16 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import styled from 'styled-components';
+import { useDropzone } from 'react-dropzone';
 import {
-	Grid,
-	List,
 	Card,
-	Header,
+	Dimmer,
 	Divider,
+	Grid,
+	Header,
 	Icon,
+	List,
+	Loader,
 	Segment,
 } from 'semantic-ui-react';
-import { useDropzone } from 'react-dropzone';
+import styled from 'styled-components';
 
 import { SpotifyData } from '../Processors/Spotify';
 
@@ -137,14 +139,22 @@ export const SpotifyUpload = () => {
 								placeholder
 								{...getRootProps({ className: 'dropzone' })}
 							>
-								<Header icon>
-									<input {...getInputProps()} />
-									<Icon name='folder' />
-									Click or drag <b>
-										my_spotify_data.zip
-									</b>{' '}
-									here for processing
-								</Header>
+								{SpotifyDataContainer.loadingMessage ? (
+									<Dimmer active>
+										<Loader
+											content={
+												SpotifyDataContainer.loadingMessage
+											}
+										/>
+									</Dimmer>
+								) : (
+									<Header icon>
+										<input {...getInputProps()} />
+										<Icon name='folder' />
+										Click or drag <b>package.zip</b> here
+										for processing
+									</Header>
+								)}
 							</StyledSegment>
 						</CardDescription>
 					</Card.Content>

@@ -1,13 +1,14 @@
 import React from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { HeaderComponent } from './Components/HeaderComponent';
 
-import { Landing } from './Pages/Landing';
-import { DiscordUpload } from './Pages/DiscordUpload';
-import { SpotifyUpload } from './Pages/SpotifyUpload';
 import { DiscordExplore } from './Pages/DiscordExplore';
+import { DiscordUpload } from './Pages/DiscordUpload';
+import { Landing } from './Pages/Landing';
+import { SpotifyExplore } from './Pages/SpotifyExplore';
+import { SpotifyUpload } from './Pages/SpotifyUpload';
 
 const App = () => (
 	<StyledApp>
@@ -16,6 +17,7 @@ const App = () => (
 			<Route exact path='/' component={Landing} />
 			<Route exact path='/discord/upload' component={DiscordUpload} />
 			<Route exact path='/spotify/upload' component={SpotifyUpload} />
+			<Route exact path='/spotify/explore' component={SpotifyExplore} />
 			<Route exact path='/discord/explore' component={DiscordExplore} />
 			<Redirect from='*' to='/' />
 		</Switch>
